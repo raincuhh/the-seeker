@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://kty82fedif8w"]
+
+[ext_resource type="PackedScene" uid="uid://bmlakmdb62p1n" path="res://Game/maps/TestingGrounds.tscn" id="1_7nyxg"]
+[ext_resource type="Script" path="res://Managers/MainManager.gd" id="1_32ha6"]
+[ext_resource type="PackedScene" uid="uid://dd75dmyve32u1" path="res://resources/Entities/Player/Player.tscn" id="2_pi6bl"]
+[ext_resource type="PackedScene" uid="uid://5sqrqi8gl8o1" path="res://Managers/DebugManager.tscn" id="3_1h6a1"]
+
+[node name="MainManager" type="Node"]
+script = ExtResource("1_32ha6")
+
+[node name="testingGrounds" parent="." instance=ExtResource("1_7nyxg")]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Player" parent="Entities" instance=ExtResource("2_pi6bl")]
+position = Vector2(-96, -96)
+
+[node name="DebugManager" parent="." instance=ExtResource("3_1h6a1")]

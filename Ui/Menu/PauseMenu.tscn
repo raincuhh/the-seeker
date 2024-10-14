@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt20lwgcloymg"]
+
+[ext_resource type="Script" path="res://Ui/Menu/PauseMenu.gd" id="1_q7id1"]
+[ext_resource type="Theme" uid="uid://cnhriitxtb4cf" path="res://Assets/Themes/pixelfont.tres" id="2_2rmcx"]
+[ext_resource type="Texture2D" uid="uid://2sbvfi78g55o" path="res://Assets/TileSets/signia2.png" id="3_k13xv"]
+[ext_resource type="Texture2D" uid="uid://v8bodcr88kqc" path="res://Assets/TileSets/signia1.png" id="4_voesx"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_q7id1")
+
+[node name="CanvasLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_2rmcx")
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 0.956863)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Labels" type="Control" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/Labels"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 50.0
+offset_right = 29.0001
+offset_bottom = 94.0001
+grow_horizontal = 2
+scale = Vector2(1.6, 1.6)
+mouse_filter = 2
+texture = ExtResource("3_k13xv")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/MarginContainer/Labels"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 198.0
+offset_right = 29.0
+offset_bottom = 242.0
+grow_horizontal = 2
+scale = Vector2(1.6, 1.6)
+mouse_filter = 2
+texture = ExtResource("4_voesx")
+
+[node name="Buttons" type="Control" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/Buttons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Continue" type="Button" parent="CanvasLayer/MarginContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Continue"
+
+[node name="Options" type="Button" parent="CanvasLayer/MarginContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Options"
+
+[node name="Quit to Menu" type="Button" parent="CanvasLayer/MarginContainer/Buttons/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit To Menu"
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Buttons/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Buttons/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/Buttons/VBoxContainer/Quit to Menu" to="." method="_on_quit_to_menu_pressed"]

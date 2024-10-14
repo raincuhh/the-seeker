@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4yss6vakgwir"]
+
+[ext_resource type="Texture2D" uid="uid://dhko3jrpjsywk" path="res://Assets/GameAssets/tile.png" id="1_44l6f"]
+[ext_resource type="Script" path="res://resources/abilties/etherealWings.gd" id="1_bim4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_12hw5"]
+radius = 8.0
+
+[node name="EtherealWings" type="Area2D"]
+script = ExtResource("1_bim4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_12hw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_44l6f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

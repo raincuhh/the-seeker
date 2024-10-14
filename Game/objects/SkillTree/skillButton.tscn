@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqmogtve2tqb"]
+
+[ext_resource type="Texture2D" uid="uid://vrmxb2myp12b" path="res://icon.svg" id="1_mdp03"]
+[ext_resource type="Script" path="res://Game/objects/SkillTree/skillButton.gd" id="2_cj4bs"]
+[ext_resource type="FontFile" uid="uid://db5bf6xvsln3t" path="res://Assets/Fonts/MinimalPixel v2.ttf" id="3_nfb8s"]
+
+[node name="SkillButton" type="TextureButton"]
+offset_right = 32.0
+offset_bottom = 32.0
+toggle_mode = true
+texture_normal = ExtResource("1_mdp03")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_cj4bs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.313726)
+theme_override_fonts/font = ExtResource("3_nfb8s")
+theme_override_font_sizes/font_size = 14
+text = "0/3"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Line2D" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+width = 2.5
+default_color = Color(0.172549, 0.172549, 0.172549, 1)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

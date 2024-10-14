@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd2cpy8avetaa"]
+
+[ext_resource type="Script" path="res://Managers/WorldManager.gd" id="1_sf6on"]
+[ext_resource type="PackedScene" uid="uid://dd75dmyve32u1" path="res://resources/Entities/Player/Player.tscn" id="2_0yh6t"]
+
+[node name="WorldManager" type="Node2D"]
+script = ExtResource("1_sf6on")
+startScene = "res://Game/maps/Region1/area1.tscn"
+
+[node name="WorldCamera" type="Camera2D" parent="."]
+position = Vector2(528, -80)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.5
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_0yh6t")]
+position = Vector2(528, -80)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../WorldCamera")

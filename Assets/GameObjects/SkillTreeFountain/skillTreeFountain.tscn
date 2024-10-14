@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgimtthvfawcc"]
+
+[ext_resource type="Script" path="res://Assets/GameObjects/SkillTreeFountain/skillTreeFountain.gd" id="1_xfmb1"]
+[ext_resource type="PackedScene" uid="uid://c2xnocd6ixtx" path="res://resources/Components/InteractionAreaComponent.tscn" id="2_ncwqe"]
+[ext_resource type="Texture2D" uid="uid://chbcqpb73fnga" path="res://Assets/GameObjects/SkillTreeFountain/skillTreeFountainv1.png" id="2_xp8h2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcysp"]
+size = Vector2(46, 40.5)
+
+[node name="SkillTreeFountain" type="Node2D"]
+script = ExtResource("1_xfmb1")
+skillTree = "res://Game/objects/SkillTree/skillTree.tscn"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("2_xp8h2")
+
+[node name="InteractionAreaComponent" parent="." instance=ExtResource("2_ncwqe")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionAreaComponent"]
+position = Vector2(0, -18.75)
+shape = SubResource("RectangleShape2D_jcysp")

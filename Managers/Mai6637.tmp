@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://kty82fedif8w"]
+
+[ext_resource type="Script" path="res://Managers/MainManager.gd" id="1_32ha6"]
+[ext_resource type="PackedScene" uid="uid://5sqrqi8gl8o1" path="res://Managers/DebugManager.tscn" id="3_1h6a1"]
+[ext_resource type="PackedScene" uid="uid://dnx6iux87pcuk" path="res://Game/maps/Region1/area1.tscn" id="4_sdyp8"]
+
+[node name="MainManager" type="Node"]
+script = ExtResource("1_32ha6")
+
+[node name="DebugManager" parent="." instance=ExtResource("3_1h6a1")]
+visible = false
+
+[node name="area1" parent="." instance=ExtResource("4_sdyp8")]

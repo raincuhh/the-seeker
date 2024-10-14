@@ -1,0 +1,525 @@
+[gd_scene load_steps=5 format=3 uid="uid://gd6mdxwyfti6"]
+
+[ext_resource type="Script" path="res://Ui/Menu/MainMenu.gd" id="1_cc26n"]
+[ext_resource type="Theme" uid="uid://cnhriitxtb4cf" path="res://Assets/Themes/pixelfont.tres" id="2_bq447"]
+[ext_resource type="Texture2D" uid="uid://bgvraf86lf0h" path="res://Assets/TileSets/signia3.png" id="3_rkhhe"]
+
+[sub_resource type="Theme" id="Theme_wytlj"]
+default_font_size = 21
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_cc26n")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_bq447")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Play" type="Control" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Title" type="Control" parent="Control/MarginContainer/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/Play/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Play/Title/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/Play/Title/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_bq447")
+theme_override_font_sizes/font_size = 42
+text = "The Seeker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/Play/Title"]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 67.845
+offset_right = 312.001
+offset_bottom = 87.845
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture = ExtResource("3_rkhhe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -15.5
+offset_right = 39.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="Control/MarginContainer/Play/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 21
+text = "Play"
+flat = true
+
+[node name="titleScreen" type="Control" parent="Control/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Control" parent="Control/MarginContainer/titleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/titleScreen/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/titleScreen/Title/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/titleScreen/Title/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_bq447")
+theme_override_font_sizes/font_size = 42
+text = "The Seeker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/titleScreen/Title"]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 67.845
+offset_right = 312.001
+offset_bottom = 87.845
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture = ExtResource("3_rkhhe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/titleScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Continue" type="Button" parent="Control/MarginContainer/titleScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Continue"
+flat = true
+
+[node name="Options" type="Button" parent="Control/MarginContainer/titleScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Options"
+flat = true
+
+[node name="Quit" type="Button" parent="Control/MarginContainer/titleScreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Quit"
+flat = true
+
+[node name="Continue" type="Control" parent="Control/MarginContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_wytlj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Continue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="Control/MarginContainer/Continue/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Start"
+
+[node name="continueBack" type="Button" parent="Control/MarginContainer/Continue"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 14
+text = "Back"
+flat = true
+
+[node name="Options" type="Control" parent="Control/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Control" parent="Control/MarginContainer/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/Options/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 37
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Options/Title/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/Options/Title/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_bq447")
+theme_override_font_sizes/font_size = 28
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/Options/Title"]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 67.845
+offset_right = 312.001
+offset_bottom = 87.845
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture = ExtResource("3_rkhhe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Video" type="Button" parent="Control/MarginContainer/Options/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Video"
+flat = true
+
+[node name="Audio" type="Button" parent="Control/MarginContainer/Options/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Audio"
+flat = true
+
+[node name="OptionsBack" type="Button" parent="Control/MarginContainer/Options"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+flat = true
+
+[node name="Video" type="Control" parent="Control/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Control" parent="Control/MarginContainer/Video"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/Video/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 37
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Video/Title/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/Video/Title/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_bq447")
+theme_override_font_sizes/font_size = 28
+text = "Video"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/Video/Title"]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 67.845
+offset_right = 312.001
+offset_bottom = 87.845
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture = ExtResource("3_rkhhe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/Video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -40.0
+offset_right = 91.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Labels" type="VBoxContainer" parent="Control/MarginContainer/Video/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="FullScreen" type="Label" parent="Control/MarginContainer/Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "FullScreen:"
+
+[node name="Borderless" type="Label" parent="Control/MarginContainer/Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "Borderless:"
+
+[node name="V-Sync" type="Label" parent="Control/MarginContainer/Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "V-Sync:"
+
+[node name="Vignette" type="Label" parent="Control/MarginContainer/Video/HBoxContainer/Labels"]
+layout_mode = 2
+text = "Vignette:"
+
+[node name="Buttons" type="VBoxContainer" parent="Control/MarginContainer/Video/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FullScreen" type="Button" parent="Control/MarginContainer/Video/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "off"
+
+[node name="Borderless" type="Button" parent="Control/MarginContainer/Video/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "off"
+
+[node name="V-Sync" type="Button" parent="Control/MarginContainer/Video/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "off"
+
+[node name="Vignette" type="Button" parent="Control/MarginContainer/Video/HBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "off"
+
+[node name="VideoBack" type="Button" parent="Control/MarginContainer/Video"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+flat = true
+
+[node name="Audio" type="Control" parent="Control/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Title" type="Control" parent="Control/MarginContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/Audio/Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 37
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Audio/Title/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/Audio/Title/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("2_bq447")
+theme_override_font_sizes/font_size = 28
+text = "Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/Audio/Title"]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 67.845
+offset_right = 312.001
+offset_bottom = 87.845
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture = ExtResource("3_rkhhe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -40.0
+offset_right = 144.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Labels" type="VBoxContainer" parent="Control/MarginContainer/Audio/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MasterVolume" type="Label" parent="Control/MarginContainer/Audio/HBoxContainer/Labels"]
+layout_mode = 2
+text = "Master Volume:"
+
+[node name="SoundVolume" type="Label" parent="Control/MarginContainer/Audio/HBoxContainer/Labels"]
+layout_mode = 2
+text = "SFX Volume:"
+
+[node name="MusicVolume" type="Label" parent="Control/MarginContainer/Audio/HBoxContainer/Labels"]
+layout_mode = 2
+text = "Music Volume:"
+
+[node name="Sliders" type="VBoxContainer" parent="Control/MarginContainer/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="MasterVolume" type="HSlider" parent="Control/MarginContainer/Audio/HBoxContainer/Sliders"]
+layout_mode = 2
+
+[node name="SoundVolume" type="HSlider" parent="Control/MarginContainer/Audio/HBoxContainer/Sliders"]
+layout_mode = 2
+
+[node name="MusicVolume" type="HSlider" parent="Control/MarginContainer/Audio/HBoxContainer/Sliders"]
+layout_mode = 2
+
+[node name="VolumeBack" type="Button" parent="Control/MarginContainer/Audio"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="Control/MarginContainer/Play/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/titleScreen/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/titleScreen/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/titleScreen/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Continue/VBoxContainer/Start" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Continue/continueBack" to="." method="_on_continue_back_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Options/VBoxContainer/Video" to="." method="_on_video_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Options/VBoxContainer/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Options/OptionsBack" to="." method="_on_options_back_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Video/HBoxContainer/Buttons/FullScreen" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Video/HBoxContainer/Buttons/Borderless" to="." method="_on_borderless_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Video/HBoxContainer/Buttons/V-Sync" to="." method="_on_v_sync_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Video/HBoxContainer/Buttons/Vignette" to="." method="_on_vignette_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/Video/VideoBack" to="." method="_on_video_back_pressed"]
+[connection signal="value_changed" from="Control/MarginContainer/Audio/HBoxContainer/Sliders/MasterVolume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="Control/MarginContainer/Audio/HBoxContainer/Sliders/SoundVolume" to="." method="_on_sound_volume_value_changed"]
+[connection signal="value_changed" from="Control/MarginContainer/Audio/HBoxContainer/Sliders/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="Control/MarginContainer/Audio/VolumeBack" to="." method="_on_volume_back_pressed"]

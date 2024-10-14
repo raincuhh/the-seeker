@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://kty82fedif8w"]
+
+[ext_resource type="Script" path="res://Managers/MainManager.gd" id="1_32ha6"]
+[ext_resource type="PackedScene" uid="uid://dyyi0eykihhti" path="res://resources/PostProcessing/Vignette.tscn" id="2_30oot"]
+[ext_resource type="PackedScene" uid="uid://5sqrqi8gl8o1" path="res://resources/Debug/DebugConsole.tscn" id="2_xa0s4"]
+[ext_resource type="PackedScene" uid="uid://bt20lwgcloymg" path="res://Ui/Menu/PauseMenu.tscn" id="3_65wul"]
+
+[node name="MainManager" type="Node"]
+script = ExtResource("1_32ha6")
+worldManager = "res://Managers/WorldManager.tscn"
+
+[node name="Vignette" parent="." instance=ExtResource("2_30oot")]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_65wul")]
+visible = false
+
+[node name="DebugConsole" parent="." instance=ExtResource("2_xa0s4")]
+visible = false

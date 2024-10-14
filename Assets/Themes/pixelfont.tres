@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cnhriitxtb4cf"]
+
+[ext_resource type="FontFile" uid="uid://db5bf6xvsln3t" path="res://Assets/Fonts/MinimalPixel v2.ttf" id="1_26c6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2plyl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_reucu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kounf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rkphi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c4mpn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5snlp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dsugw"]
+
+[resource]
+default_font = ExtResource("1_26c6l")
+default_font_size = 14
+Button/colors/font_hover_color = Color(0.360784, 0, 0.776471, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_2plyl")
+Button/styles/focus = SubResource("StyleBoxEmpty_reucu")
+Button/styles/hover = SubResource("StyleBoxEmpty_kounf")
+Button/styles/normal = SubResource("StyleBoxEmpty_rkphi")
+Button/styles/pressed = SubResource("StyleBoxEmpty_c4mpn")
+HSlider/styles/grabber_area = SubResource("StyleBoxEmpty_5snlp")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxEmpty_dsugw")
